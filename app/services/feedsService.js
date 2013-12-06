@@ -285,6 +285,9 @@ function feedsService($rootScope, feedsStorage, opml, config) {
             return cats;
         },
         
+        get type() {
+            return 'allCategory';
+        },
         get feeds() {
             return feeds;
         },

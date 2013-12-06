@@ -1,26 +1,17 @@
-<div class="two-columns">
+<popup>
     
-    <div class="column-one">
-        <div class="toolbar-on-left__container">
-            <div class="toolbar-on-left">
-                <a class="button2" href="#/">Go back</a>
-            </div>
-        </div>
+    <h1>Organize your feeds</h1>
+    
+    <div class="organize__add-category">
+        <label>add new category:</label>
+        <input type="text" ng-model="newCategoryName"/>
+        <button class="inputty" ng-click="addNewCategory()"
+                ng-disabled="newCategoryName == ''">
+            add
+        </button>
     </div>
     
-    <div class="column-two">
     <div class="text scroll">
-        
-        <h1>Organize your feeds</h1>
-        
-        <div class="organize__add-category">
-            <label>add new category:</label>
-            <input type="text" ng-model="newCategoryName"/>
-            <button class="inputty" ng-click="addNewCategory()"
-                    ng-disabled="newCategoryName == ''">
-                add
-            </button>
-        </div>
         
         <div ng-repeat="item in feedsTree" ng-switch="item.type">
             <div ng-switch-when="category" class="organize__category-container">
@@ -32,6 +23,5 @@
         </div>
         
     </div>
-    </div>
     
-</div>
+</popup>

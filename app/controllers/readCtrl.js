@@ -27,12 +27,11 @@ function ReadCtrl($scope, $window, feedsService, articlesService, downloadServic
             showArticles();
         },
         function (progress) {
-            var ratio = Math.round(progress.completed / progress.total * 100);
-            angular.element('.refreshing__progress-bar').css('width', ratio + '%');
+            $scope.downloadProgressRatio = progress.completed / progress.total;
         });
         
+        $scope.downloadProgressRatio = 0;
         $scope.state = 'refreshing';
-        angular.element('.refreshing__progress-bar').css('width', '0%');
     }
     
     function showArticles() {

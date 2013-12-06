@@ -32,6 +32,8 @@
     <script src="./directives/articlesList.js"></script>
     <script src="./directives/dropdown.js"></script>
     <script src="./directives/pickTagMenu.js"></script>
+    <script src="./directives/feedsTreeItem.js"></script>
+    <script src="./directives/popup.js"></script>
     
     <script src="./dataManager/dataManager.js"></script>
     <script src="./config.js"></script>
@@ -40,12 +42,14 @@
 </head>
 <body>
     
-    <ng-view></ng-view>
+    <div ng-include="'views/read.html'" ng-controller="ReadCtrl" class="main-layout"></div>
     
-    <div class="notification-bar"
+    <ng-view class="popup-view"></ng-view>
+    
+    <!--<div class="notification-bar"
         ng-if="notificationBarVisible"
         ng-animate
-        ng-bind="notificationMessage"></div>
+        ng-bind="notificationMessage"></div>-->
     
 </body>
 </html>

@@ -42,10 +42,8 @@ function initApp(userDataPath, currentDataModelVersion) {
         
         // Configuring routes
         
-        $routeProvider.when('/', {
-            controller: 'ReadCtrl',
-            templateUrl: 'views/read.html'
-        }).when('/importExport', {
+        $routeProvider
+        .when('/importExport', {
             controller: 'ImportExportCtrl',
             templateUrl: 'views/importExport.html'
         }).when('/add', {
@@ -57,12 +55,16 @@ function initApp(userDataPath, currentDataModelVersion) {
         }).when('/tags', {
             controller: 'TagsCtrl',
             templateUrl: 'views/tags.html'
-        }).when('/settings', {
+        })
+        .when('/about', {
+            templateUrl: 'views/about.html'
+        })
+        .when('/settings', {
             controller: 'SettingsCtrl',
             templateUrl: 'views/settings.html'
-        }).when('/about/:subview', {
-            controller: 'AboutCtrl',
-            templateUrl: 'views/about/main.html'
+        })
+        .when('/help', {
+            templateUrl: 'views/help.html'
         });
         
     });
@@ -72,6 +74,8 @@ function initApp(userDataPath, currentDataModelVersion) {
     sputnik.directive('articlesList', articlesListDirective);
     sputnik.directive('dropdown', dropdownDirective);
     sputnik.directive('pickTagMenu', pickTagMenuDirective);
+    sputnik.directive('feedsTreeItem', feedsTreeItemDirective);
+    sputnik.directive('popup', popupDirective);
     
     sputnik.directive('organizeCategory', organizeCategoryDirective);
     sputnik.directive('organizeFeed', organizeFeedDirective);
